@@ -1,0 +1,54 @@
+version: '4'
+
+compose:
+  files:
+    - docker-compose.yml
+
+interaction:
+  bash:
+    description: Open bash shell in app container
+    service: app
+    command: /bin/bash
+    compose:
+      method: exec
+
+  bundle:
+    description: Run bundle command
+    service: spring
+    command: bundle
+    compose:
+      method: exec
+
+  rails:
+    description: Run rails command
+    service: spring
+    command: rails
+    compose:
+      method: exec
+
+  rspec:
+    description: Run rspec command
+    service: spring
+    command: rspec
+    compose:
+      method: exec
+
+  rubocop:
+    description: Run rubocop command
+    service: spring
+    command: rubocop
+    compose:
+      method: exec
+
+  yarn.wds:
+    description: Run yarn command
+    service: webpack-dev-server
+    command: yarn
+    compose:
+      method: exec
+
+provision:
+  - dip compose build
+  - dip up -d db spring app
+  - dip bash -c bin/setup
+  - dip down
