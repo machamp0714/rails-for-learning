@@ -1,0 +1,109 @@
+version: "3.4"
+
+x-app: &app
+  user: "ruby:ruby"
+  env_file:
+    - .env.local
+  volumes:
+    - .:/app:cached
+    - bundle:/usr/local/bundle
+    - node_modules:/app/node_modules
+    - yarn-cache:/usr/local/share/.cache/yarn/v4
+    - stripe-config:/home/ruby/.config
+  tty: true
+  stdin_open: true
+
+services:
+  app:
+    <<: *app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: app
+    command: ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
+    entrypoint:
+      - "prehook"
+      - "ruby -v"
+      - "rm -f tmp/pids/server.pid"
+      - "dockerize --wait file:///app/tmp/sockets/spring.sock"
+      - "--"
+    environment:
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: 
+      DATABASE_HOST: db
+      WEBPACKER_DEV_SERVER_HOST: webpack-dev-server
+      WEBPACKER_DEV_SERVER_PORT: ${WDS_PORT-3035}
+      REDIS_URL: redis://redis:6379
+    ports:
+      - ${RAILS_PORT-3000}:3000
+    depends_on:
+      - db
+      - webpack-dev-server
+  webpack-dev-server:
+    <<: *app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: webpack_dev_server
+    command: ./bin/webpack-dev-server
+    entrypoint:
+      - "prehook"
+      - "dockerize --wait file:///app/tmp/sockets/spring.sock"
+      - "yarn install --check-files"
+      - "--"
+    environment:
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD:
+      DATABASE_HOST: db
+      WEBPACKER_DEV_SERVER_HOST: webpack-dev-server
+      WEBPACKER_DEV_SERVER_PORT: ${WDS_PORT-3035}
+    depends_on:
+      - db
+
+  spring:
+    <<: *app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: app
+    command: ["bundle", "exec", "spring", "server"]
+    entrypoint:
+      - "prehook"
+      - "bundle install"
+      - "--"
+    environment:
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: 
+      DATABASE_HOST: db
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+      WEBPACKER_DEV_SERVER_PORT: ${WDS_PORT-3035}
+      WEBPACKER_DEV_SERVER_PUBLIC: ${WDS_PUBLIC-localhost}:${WDS_PORT-3035}
+      SPRING_SOCKET: /app/tmp/sockets/spring.sock
+      REDIS_URL: redis://redis:6379
+
+  db:
+    image: mysql:8.0.20
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+  redis:
+    image: redis:5.0.6
+    volumes:
+      - redis_data:/data
+
+volumes:
+  mysql_data:
+    driver: local
+  bundle:
+    driver: local
+  yarn-cache:
+    driver: local
+  node_modules:
+    driver: local
+  stripe-config:
+    driver: local
+  redis_data:
+    driver: local

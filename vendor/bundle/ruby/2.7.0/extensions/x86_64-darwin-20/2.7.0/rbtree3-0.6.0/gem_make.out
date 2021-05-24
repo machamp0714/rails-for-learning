@@ -1,0 +1,17 @@
+current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/rbtree3-0.6.0
+/Users/ooidetatsuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/ooidetatsuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210524-11189-13ib6g1.rb extconf.rb
+checking for rb_exec_recursive() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/rbtree3-0.6.0
+make "DESTDIR=" clean
+
+current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/rbtree3-0.6.0
+make "DESTDIR="
+compiling dict.c
+compiling rbtree.c
+linking shared-object rbtree.bundle
+
+current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/rbtree3-0.6.0
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 rbtree.bundle ./.gem.20210524-11189-11muipk
