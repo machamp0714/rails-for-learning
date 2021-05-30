@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Price < ApplicationRecord
-  belongs_to :product
+  self.inheritance_column = :_type_disabled
+
+  belongs_to :product, primary_key: :external_id, optional: true
 end
 
 # == Schema Information
