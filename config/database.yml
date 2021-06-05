@@ -14,6 +14,10 @@ test:
   <<: *default
   database: rails_for_learning_test
 
+staging:
+  <<: *default
+  database: rails_for_learning_staging
+
 production:
   <<: *default
   database: rails_for_learning_production
