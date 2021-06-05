@@ -44,11 +44,15 @@ FROM ruby:2.7.2-alpine as app
 
 ENV APP=/app \
     LANG=C.UTF-8 \
-    RUNTIME_PACKAGES="tzdata mysql-dev"
+    RUNTIME_PACKAGES="tzdata mysql-dev mysql-client curl" \
+    DOCKERIZE_VERSION="v0.6.1"
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache ${RUNTIME_PACKAGES}
+    apk add --no-cache ${RUNTIME_PACKAGES} && \
+    wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+    tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+    rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 RUN adduser -u 1000 -D ruby
 RUN mkdir $APP && chown ruby $APP
