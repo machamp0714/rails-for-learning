@@ -1,5 +1,5 @@
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/mysql2-0.5.3/ext/mysql2
-/Users/ooidetatsuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/ooidetatsuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210524-11189-dkflih.rb extconf.rb
+/Users/ooidetatsuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/ooidetatsuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210605-47742-1ee5m13.rb extconf.rb
 checking for rb_absint_size()... yes
 checking for rb_absint_singlebit_p()... yes
 checking for rb_wait_for_single_fd()... yes
@@ -54,4 +54,4 @@ linking shared-object mysql2/mysql2.bundle
 
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/mysql2-0.5.3/ext/mysql2
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20210524-11189-wyezuu/mysql2
+/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20210605-47742-qw9bvj/mysql2

@@ -1,5 +1,5 @@
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
-/Users/ooidetatsuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/ooidetatsuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210524-11189-1psp62f.rb extconf.rb
+/Users/ooidetatsuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/ooidetatsuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210605-47742-1lk8k5r.rb extconf.rb
 creating Makefile
 
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
@@ -12,4 +12,4 @@ linking shared-object bootsnap/bootsnap.bundle
 
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210524-11189-tk2ozn/bootsnap
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210605-47742-nwv6mq/bootsnap

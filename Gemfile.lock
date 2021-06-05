@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/ruffnote/mimemagic.git
-  revision: 19bd976a55097086c5bbec24dac059db167437d1
-  branch: 0.3.6
-  specs:
-    mimemagic (0.3.6)
-
-GIT
   remote: https://github.com/ruffnote/ruby-saddler-reporter-github.git
   revision: 2bc32533db2c55ad1a9bf089091e430134e7b34a
   branch: empty-checkstyle
@@ -561,7 +554,6 @@ DEPENDENCIES
   kaminari
   letter_opener_web (~> 1.0)
   listen (~> 3.3)
-  mimemagic!
   mysql2 (~> 0.5)
   named_let
   naught
