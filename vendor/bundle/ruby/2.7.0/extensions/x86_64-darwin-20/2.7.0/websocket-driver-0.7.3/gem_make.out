@@ -1,5 +1,5 @@
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
-/Users/ooidetatsuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/ooidetatsuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210524-8578-1wio059.rb extconf.rb
+/Users/ooidetatsuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/ooidetatsuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210605-47742-1p494gw.rb extconf.rb
 creating Makefile
 
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
@@ -12,4 +12,4 @@ linking shared-object websocket_mask.bundle
 
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20210524-8578-cw7cjl
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20210605-47742-an4rqn

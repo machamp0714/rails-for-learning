@@ -1,5 +1,5 @@
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/psych-3.3.2/ext/psych
-/Users/ooidetatsuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/ooidetatsuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210524-11189-1k0m8dd.rb extconf.rb
+/Users/ooidetatsuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/ooidetatsuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210605-47742-hbbfkp.rb extconf.rb
 checking for yaml.h... no
 checking for _WIN32... no
 checking for dlfcn.h... yes
@@ -38,4 +38,4 @@ linking shared-object psych.bundle
 
 current directory: /Users/ooidetatsuya/repo/rails-for-learning/vendor/bundle/ruby/2.7.0/gems/psych-3.3.2/ext/psych
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 psych.bundle ./.gem.20210524-11189-9sa479
+/usr/bin/install -c -m 0755 psych.bundle ./.gem.20210605-47742-su5h0x
