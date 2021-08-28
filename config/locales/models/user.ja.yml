@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              format: "%{attribute}: %{message}"
+              blank: 必須項目です
